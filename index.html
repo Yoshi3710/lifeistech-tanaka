@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ライフイズテック レッスン（中学）の学校向け導入・申込み窓口。株式会社タナカが無料トライアル・有料版のお申込み、導入相談を承ります。" />
+  <meta name="theme-color" content="#0f56d9" />
+  <title>ライフイズテック レッスン × 株式会社タナカ｜中学校の情報・技術教育</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#1e63f0;
+      --blue-deep:#1045b5;
+      --cyan:#22b8e8;
+      --navy:#11253f;
+      --ink:#1d2a3d;
+      --muted:#60738c;
+      --line:#d9e4f1;
+      --line-soft:#e9eff7;
+      --white:#ffffff;
+      --soft:#f8fbff;
+      --soft-blue:#eff6ff;
+      --soft-mint:#effbf7;
+      --soft-purple:#f4f0ff;
+      --soft-yellow:#fff9e7;
+      --mint:#37c59a;
+      --mint-deep:#138768;
+      --purple:#7b61ff;
+      --orange:#ff9a3d;
+      --pink:#ff5ca8;
+      --shadow:0 18px 50px rgba(20,64,123,.12);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+      line-height:1.8;
+    }
+    a{color:inherit}
+    button,input,select,textarea{font:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+    .pilot{background:linear-gradient(90deg,#fff4ca,#ffe8d0);color:#7d4d00;text-align:center;padding:8px 12px;font-size:12px;font-weight:800;border-bottom:1px solid #f2d9a2}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,239,.85)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .co-brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+    .lit-brand{font-family:"Inter",sans-serif;font-size:18px;font-weight:900;color:var(--blue);line-height:1.05;letter-spacing:-.02em;white-space:nowrap}
+    .lit-brand small{display:block;font-size:10px;letter-spacing:.16em;color:#7da1d8;margin-top:6px}
+    .cross{font-size:18px;color:#97a7be;font-weight:700}
+    .tanaka-brand{font-size:17px;font-weight:900;color:#1e2b3b;white-space:nowrap}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-link{font-size:13px;font-weight:800;text-decoration:none;color:#435771;padding:8px 10px;border-radius:999px}
+    .nav-link:hover{background:#f2f7fd}
+    .phone-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(135deg,#102a43,#18406a);color:#fff;border-radius:999px;padding:10px 16px;font-size:13px;font-weight:900;box-shadow:0 10px 20px rgba(16,42,67,.16)}
+
+    .hero{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 12% 20%, rgba(123,97,255,.10) 0, rgba(123,97,255,0) 28%),
+      radial-gradient(circle at 85% 18%, rgba(34,184,232,.15) 0, rgba(34,184,232,0) 33%),
+      radial-gradient(circle at 78% 80%, rgba(55,197,154,.13) 0, rgba(55,197,154,0) 30%),
+      linear-gradient(135deg,#f9fcff 0%,#eef6ff 52%,#fffdfa 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero:before{width:420px;height:420px;right:-120px;top:-120px;background:radial-gradient(circle at 35% 35%,rgba(34,184,232,.2),rgba(34,184,232,.05) 55%,transparent 56%)}
+    .hero:after{width:260px;height:260px;left:-80px;bottom:-120px;border:48px solid rgba(123,97,255,.07)}
+    .hero-brandstrip{position:relative;z-index:2;padding-top:26px}
+    .hero-brandbox{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid #dbe6f3;border-radius:20px;padding:15px 20px;box-shadow:0 10px 24px rgba(20,64,123,.07)}
+    .hero-productname{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+    .hero-productname strong{font-family:"Inter",sans-serif;font-size:clamp(24px,3vw,38px);line-height:1;color:var(--blue);letter-spacing:-.03em}
+    .hero-productname span{font-size:14px;font-weight:900;color:#5a6f87}
+    .hero-dealer{display:flex;align-items:center;gap:10px;font-weight:900;color:#263b52}
+    .dealer-label{font-size:11px;font-weight:900;letter-spacing:.08em;color:#6a7e94;background:#f0f5fa;border-radius:999px;padding:5px 9px}
+    .hero-inner{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;padding:38px 0 76px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#e9f1ff,#f2f7ff);color:var(--blue-deep);border:1px solid #cfe0ff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:900;margin-bottom:20px;font-family:"M PLUS Rounded 1c",sans-serif}
+    .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--blue))}
+    h1{font-size:clamp(38px,5vw,64px);line-height:1.14;letter-spacing:-.04em;color:var(--navy);margin:0 0 22px;font-weight:900}
+    h1 .accent{background:linear-gradient(90deg,var(--blue) 0%,var(--purple) 45%,var(--mint-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-lead{font-size:18px;color:#495f78;max-width:700px;margin:0 0 30px}
+    .hero-lead strong{color:var(--navy)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:14px;border:1px solid transparent;text-decoration:none;font-weight:900;cursor:pointer;transition:.2s transform,.2s box-shadow,.2s background}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;box-shadow:0 10px 24px rgba(70,98,220,.25)}
+    .btn-secondary{background:#fff;color:var(--navy);border-color:#bfd1e7}
+    .btn-secondary:hover{background:#f7fbff}
+    .btn-dark{background:linear-gradient(135deg,#163252,#0d5b80);color:#fff;box-shadow:0 10px 20px rgba(16,42,67,.15)}
+    .hero-linkline{margin-top:16px;font-size:13px;color:#5c728a}
+    .hero-linkline a{color:var(--blue);font-weight:800;text-decoration:none}
+
+    .quick-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+    .fact{position:relative;background:rgba(255,255,255,.74);backdrop-filter:blur(4px);border:1px solid #dbe7f4;border-radius:18px;padding:15px 16px;box-shadow:0 8px 18px rgba(21,74,127,.05)}
+    .fact:before{content:"";position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:11px}
+    .fact:nth-child(1):before{background:linear-gradient(135deg,#dcedff,#f0f6ff)}
+    .fact:nth-child(2):before{background:linear-gradient(135deg,#eafcff,#edf4ff)}
+    .fact:nth-child(3):before{background:linear-gradient(135deg,#ebfff7,#effbf7)}
+    .fact b{display:block;color:var(--navy);font-size:15px;padding-left:46px;margin-bottom:2px}
+    .fact span{display:block;padding-left:46px;font-size:12px;color:#5f748b}
+    .fact i{position:absolute;left:28px;top:21px;font-style:normal;font-size:14px;font-weight:900;color:var(--blue)}
+    .fact:nth-child(3) i{color:var(--mint-deep)}
+
+    .hero-visual{display:grid;gap:16px;align-self:stretch}
+    .hero-photo-card{position:relative;border-radius:32px;overflow:hidden;box-shadow:0 24px 60px rgba(20,64,123,.18);background:#fff;border:1px solid #d7e4f2;min-height:590px}
+    .hero-photo-card img{width:100%;height:100%;object-fit:cover}
+    .hero-photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,37,63,.05) 0%,rgba(17,37,63,.22) 100%)}
+    .caption-chip{position:absolute;left:24px;bottom:24px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.8);padding:12px 16px;border-radius:999px;font-size:13px;font-weight:900;color:#1e3453;box-shadow:0 10px 25px rgba(20,64,123,.1);z-index:2}
+    .caption-chip span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-size:12px}
+    .hero-side-card{background:linear-gradient(135deg,#ffffff,#f7fbff);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 10px 24px rgba(22,66,121,.05)}
+    .hero-side-card h3{font-size:20px;line-height:1.45;color:var(--navy);margin:0 0 8px}
+    .hero-side-card p{margin:0;color:#60748a;font-size:14px}
+
+    section{padding:84px 0}
+    .section-head{max-width:840px;margin-bottom:40px}
+    .kicker{font-family:"Inter",sans-serif;font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--blue);margin-bottom:10px}
+    .section-title{font-size:clamp(30px,4vw,44px);line-height:1.32;letter-spacing:-.025em;color:var(--navy);margin:0 0 14px;font-weight:900}
+    .section-copy{font-size:17px;color:var(--muted);margin:0}
+
+    .intro{background:#fff}
+    .intro-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:28px;align-items:stretch}
+    .intro-card{background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:0 10px 24px rgba(22,66,121,.05)}
+    .intro-card h3{font-size:30px;line-height:1.35;margin:0 0 12px;color:var(--navy)}
+    .intro-card p{font-size:15px;color:#5f748b;margin:0 0 16px}
+    .intro-card ul{margin:0 0 20px;padding-left:1.2em;color:#42586f}
+    .intro-card li{margin-bottom:7px}
+    .link-box{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .visual-stack{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .stack-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:0 10px 24px rgba(22,66,121,.05)}
+    .stack-card img{width:100%;border-radius:16px}
+    .stack-card p{margin:10px 4px 0;color:#5d7289;font-size:13px}
+
+    .achievements{background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%)}
+    .achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+    .achievement-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:0 10px 26px rgba(23,65,117,.05);height:100%}
+    .achievement-card img{width:100%;border-radius:18px}
+    .achievement-card p{margin:12px 4px 0;color:#61768d;font-size:13px}
+
+
+    .trust{background:linear-gradient(180deg,#ffffff 0%,#f7fbff 100%)}
+    .trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:center}
+    .trust-image{background:#fff;border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:0 10px 24px rgba(22,66,121,.05)}
+    .trust-image img{width:100%;border-radius:18px}
+    .trust-copy{background:linear-gradient(145deg,#11253f,#18446d);color:#fff;border-radius:26px;padding:30px;box-shadow:0 14px 28px rgba(17,37,63,.12)}
+    .trust-copy .kicker{color:#a7d5ff}
+    .trust-copy h2{font-size:34px;line-height:1.35;margin:0 0 14px}
+    .trust-copy p{margin:0;color:#dbe6f2}
+
+    .lesson{background:#fff}
+    .curriculum{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .curr-card{border:1px solid var(--line);border-radius:22px;padding:24px;background:#fff;position:relative;overflow:hidden;box-shadow:0 8px 22px rgba(19,58,101,.04)}
+    .curr-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:6px}
+    .curr-card:nth-child(1):before{background:linear-gradient(90deg,var(--blue),#7aa6ff)}
+    .curr-card:nth-child(2):before{background:linear-gradient(90deg,var(--purple),#9e8cff)}
+    .curr-card:nth-child(3):before{background:linear-gradient(90deg,var(--mint),#73ddb9)}
+    .curr-card:nth-child(4):before{background:linear-gradient(90deg,var(--orange),#ffc061)}
+    .curr-card .num{font-family:"Inter",sans-serif;font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.08em;margin-bottom:12px}
+    .curr-card h3{font-size:18px;line-height:1.45;color:var(--navy);margin:0 0 10px}
+    .curr-card p{font-size:14px;color:var(--muted);margin:0}
+    .official-link{margin-top:24px;font-size:13px;color:#526a82}
+    .official-link a{color:var(--blue);font-weight:800}
+
+    .benefits{background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%)}
+    .benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .benefit{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 10px 26px rgba(23,65,117,.05)}
+    .benefit-label{display:inline-block;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900;margin-bottom:14px;font-family:"M PLUS Rounded 1c",sans-serif}
+    .benefit.student .benefit-label{background:#eef4ff;color:#0d65c8}
+    .benefit.teacher .benefit-label{background:#eefbf7;color:#0b7a60}
+    .benefit h3{font-size:26px;color:var(--navy);margin:0 0 16px}
+    .checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+    .checks li{display:grid;grid-template-columns:24px 1fr;gap:10px;color:#43586e}
+    .tick{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#edf5ff;color:var(--blue);font-size:12px;font-weight:900;margin-top:3px}
+    .teacher .tick{background:#e9f8f3;color:#0c7f65}
+
+    .plans{background:linear-gradient(140deg,#11253f 0%,#0d355d 52%,#11446d 100%);color:#fff;position:relative;overflow:hidden}
+    .plans:before{content:"";position:absolute;left:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+    .plans:after{content:"";position:absolute;right:-50px;bottom:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05)}
+    .plans .wrap{position:relative}
+    .plans .kicker{color:#99d3ff}
+    .plans .section-title{color:#fff}
+    .plans .section-copy{color:#d6e1ed}
+    .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .plan{border-radius:24px;padding:30px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.09);backdrop-filter:blur(6px)}
+    .plan.trial{background:#fff;color:var(--ink)}
+    .plan-tag{font-family:"Inter",sans-serif;font-size:12px;font-weight:900;letter-spacing:.1em;color:#9dccff}
+    .trial .plan-tag{color:var(--blue)}
+    .plan h3{font-size:30px;line-height:1.3;margin:8px 0 10px}
+    .plan p{margin:0 0 18px;color:#d4deea}
+    .trial p{color:var(--muted)}
+    .plan ul{margin:0 0 22px;padding-left:1.2em;color:#eaf0f6}
+    .trial ul{color:#3f546a}
+    .deadline{display:inline-block;border-radius:11px;padding:8px 11px;background:#eaf2ff;color:#155fbd;font-size:13px;font-weight:900;margin-bottom:20px}
+    .plan .btn{width:100%}
+    .plan-note{font-size:12px;color:#aebfd0;margin-top:14px}
+    .trial .plan-note{color:#738398}
+
+    .window{background:#fff}
+    .window-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:26px;align-items:stretch}
+    .window-message{border-radius:26px;padding:34px;background:linear-gradient(145deg,#1f63ef,#7b61ff);color:#fff;box-shadow:0 16px 36px rgba(72,82,202,.18)}
+    .window-message .mini{font-family:"Inter",sans-serif;font-size:12px;font-weight:900;letter-spacing:.12em;color:#dae8ff}
+    .window-message h3{font-size:31px;line-height:1.35;margin:8px 0 17px}
+    .window-message p{color:#eef3ff;margin:0 0 20px}
+    .phone-card{display:inline-flex;flex-direction:column;background:#fff;color:#102a43;border-radius:16px;padding:12px 17px;text-decoration:none;min-width:240px;box-shadow:0 10px 18px rgba(10,30,51,.13)}
+    .phone-card small{font-size:11px;color:#6e7e90;font-weight:800}
+    .phone-card strong{font-size:22px;line-height:1.2}
+    .flow{border:1px solid var(--line);border-radius:26px;padding:28px;background:#fbfdff;display:grid;gap:15px}
+    .flow-row{display:grid;grid-template-columns:120px 30px 1fr;align-items:center;gap:12px}
+    .flow-role{border-radius:13px;padding:12px 13px;font-weight:900;text-align:center;background:#edf5ff;color:#145fbd}
+    .flow-role.lit{background:#e9f8f3;color:#0c795f}
+    .arrow{font-size:22px;color:#9aabbd;text-align:center}
+    .flow-text{font-size:14px;color:#4b6075}
+    .flow-text strong{color:#253c52}
+
+    .apply{background:linear-gradient(180deg,#f6f9fd 0%,#fdfefe 100%)}
+    .apply-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:34px;align-items:start}
+    .apply-info{position:sticky;top:110px}
+    .apply-info h3{font-size:28px;color:var(--navy);margin:0 0 14px}
+    .apply-info p{color:var(--muted);margin:0 0 16px}
+    .callout{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 17px;margin-top:16px;box-shadow:0 8px 20px rgba(21,74,127,.04)}
+    .callout b{display:block;color:var(--navy);font-size:14px;margin-bottom:5px}
+    .callout span{font-size:13px;color:#60748a}
+
+    form{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 12px 34px rgba(19,58,101,.08);padding:30px}
+    .form-title{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:5px}
+    .form-sub{font-size:12px;color:#718399;margin-bottom:22px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:13px;font-weight:800;color:#394e64}
+    .req{font-size:10px;color:#c92929;margin-left:5px}
+    input,select{width:100%;border:1px solid #cad7e5;border-radius:12px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}
+    input:focus,select:focus{border-color:#6aa6f3;box-shadow:0 0 0 3px rgba(23,105,224,.09)}
+    .subject-row{display:flex;gap:18px;flex-wrap:wrap;border:1px solid #cad7e5;border-radius:12px;padding:12px 13px}
+    .subject-row label{display:flex;gap:7px;align-items:center;font-weight:700}
+    .subject-row input{width:auto}
+    .grade-box{grid-column:1/-1;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .grade-head{background:linear-gradient(90deg,#f1f6fb,#f8fbff);padding:10px 13px;font-size:13px;font-weight:900;color:#344b62}
+    .grade-row{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;padding:11px 13px;border-top:1px solid #e8eef5}
+    .grade-check{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:800;color:#394e64}
+    .grade-check input{width:auto}
+    .grade-count{display:flex;align-items:center;gap:8px}
+    .grade-count input{max-width:160px}
+    .grade-count span{font-size:13px;color:#63778c}
+    .consent{grid-column:1/-1;display:flex;gap:9px;align-items:flex-start;font-size:12px;color:#687b90}
+    .consent input{width:auto;margin-top:4px}
+    .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:3px}
+    .submit-note{font-size:11px;color:#73859a}
+    .form-error{grid-column:1/-1;display:none;background:#fff0f0;color:#a42323;border:1px solid #f1c6c6;border-radius:12px;padding:9px 11px;font-size:12px;font-weight:700}
+    .form-success{grid-column:1/-1;display:none;background:#ecf9f3;color:#0b6a51;border:1px solid #bfe7d7;border-radius:12px;padding:11px 13px;font-size:13px;font-weight:800}
+    .print-trigger{margin-top:14px}
+    .paper-only{display:none}
+
+    .company{background:#fff;border-top:1px solid var(--line)}
+    .company-box{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;border:1px solid var(--line);border-radius:26px;padding:32px;background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);box-shadow:0 10px 24px rgba(22,66,121,.05)}
+    .company h3{font-size:29px;color:var(--navy);margin:0 0 12px}
+    .company p{margin:0;color:var(--muted)}
+    .company dl{display:grid;grid-template-columns:150px 1fr;margin:0}
+    .company dt,.company dd{margin:0;padding:10px 0;border-bottom:1px solid #edf1f5;font-size:14px}
+    .company dt{font-weight:900;color:#53677c}
+    .company dd{color:#24384d}
+    .company a{color:var(--blue);font-weight:800;text-decoration:none}
+    footer{background:#0a1e33;color:#afbed0;padding:32px 0;font-size:12px}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .footer-row strong{color:#fff}
+    .footer-brand{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+    @media print{
+      @page{size:A4 portrait;margin:9mm}
+      body *{visibility:hidden!important}
+      #printSheet,#printSheet *{visibility:visible!important}
+      #printSheet{display:block!important;position:absolute;left:0;top:0;width:100%;background:#fff;color:#000;font-family:"Yu Gothic",Meiryo,sans-serif;line-height:1.35}
+      .print-page{width:100%;margin:0 auto}
+      .print-topline{display:flex;justify-content:flex-end;gap:16px;font-size:10.5pt;font-weight:700;margin-bottom:5mm}
+      .print-title{text-align:center;font-size:19pt;font-weight:900;line-height:1.35;margin:0 0 3mm}
+      .print-sub{text-align:center;font-size:15pt;font-weight:900;margin:0 0 5mm}
+      .print-note{font-size:9.5pt;margin:0 0 2.5mm}
+      .print-block{border:1px solid #555;margin-bottom:3.4mm}
+      .print-label{background:#eef1f4;border-bottom:1px solid #777;font-size:10pt;font-weight:900;padding:2mm 3mm}
+      .print-value{min-height:12mm;padding:3mm;font-size:11pt;white-space:pre-wrap}
+      .print-row2{display:grid;grid-template-columns:1fr 1fr;gap:3.4mm}
+      .print-choice{padding:3mm;font-size:11pt;min-height:12mm}
+      .print-grade-table{width:100%;border-collapse:collapse;font-size:10.5pt}
+      .print-grade-table th,.print-grade-table td{border:1px solid #777;padding:3mm;text-align:left}
+      .print-grade-table th{background:#eef1f4;font-weight:900}
+      .print-footer{margin-top:5mm;border:1px solid #555;padding:3mm;text-align:center;font-size:10.5pt;font-weight:800}
+      .print-helper{font-size:8.5pt;color:#444;margin-top:1.5mm}
+    }
+
+    @media(max-width:980px){
+      .nav-link{display:none}
+      .hero-inner,.intro-grid,.trust-grid,.window-grid,.apply-grid,.company-box{grid-template-columns:1fr}
+      .achievement-grid{grid-template-columns:1fr 1fr}
+      .curriculum{grid-template-columns:1fr 1fr}
+      .apply-info{position:static}
+    }
+    @media(max-width:720px){
+      .wrap{width:min(100% - 28px,1140px)}
+      .nav{min-height:68px}
+      .lit-brand{font-size:15px}.lit-brand small{display:none}.tanaka-brand{font-size:14px}.cross{font-size:14px}
+      .phone-btn{padding:9px 11px;font-size:11px}
+      .hero-inner{padding:56px 0 54px}
+      h1{font-size:39px}
+      .hero-lead{font-size:16px}
+      .quick-facts,.curriculum,.benefit-grid,.plan-grid,.visual-stack,.achievement-grid{grid-template-columns:1fr}
+      section{padding:64px 0}
+      .hero-brandbox{padding:13px 15px}
+      .hero-productname strong{font-size:24px}
+      .hero-dealer{width:100%;justify-content:flex-start}
+      .hero-photo-card{min-height:400px}
+      .caption-chip{left:18px;bottom:18px;font-size:12px;padding:10px 12px}
+      .flow-row{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg)}
+      .form-grid{grid-template-columns:1fr}
+      .field.full,.grade-box,.consent,.submit-row,.form-error,.form-success{grid-column:1}
+      .grade-row{grid-template-columns:1fr}
+      .company dl{grid-template-columns:1fr}
+      .company dt{border-bottom:none;padding-bottom:0}.company dd{padding-top:3px}
+      .footer-row{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="pilot">保存版ベース：パイロット版 v3 を保管済み｜現在は v6 基準・トップ強化版 v8 を表示しています</div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="co-brand" href="#top" aria-label="トップへ">
+        <div class="lit-brand">Life is Tech! Lesson<small>MIDDLE SCHOOL</small></div>
+        <div class="cross">×</div>
+        <div class="tanaka-brand">株式会社タナカ</div>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="#intro">紹介</a>
+        <a class="nav-link" href="#lesson">教材について</a>
+        <a class="nav-link" href="#plans">お申込み</a>
+        <a class="phone-btn" href="tel:0669976630">TEL 06-6997-6630</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-brandstrip">
+        <div class="hero-brandbox">
+          <div class="hero-productname">
+            <strong>Life is Tech! Lesson</strong>
+            <span>ライフイズテック レッスン（中学）</span>
+          </div>
+          <div class="hero-dealer">
+            <span class="dealer-label">取扱会社</span>
+            <span>株式会社タナカ</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap hero-inner">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>中学校の情報・技術教育に対応</div>
+          <h1>中学校の情報・技術教育を、<br><span class="accent">もっと学びやすく、もっと伝わりやすく。</span></h1>
+          <p class="hero-lead"><strong>ライフイズテック レッスン（中学）</strong>は、中学校の情報・技術教育を支えるブラウザ完結型の学習教材です。技術・家庭科（技術分野）の学習に対応し、正式な学習内容区分では<strong>「D 情報の技術」D(1)〜D(4)</strong>を幅広くカバー。株式会社タナカが、学校へのご案内・お申込み・導入相談の窓口を担当します。</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary apply-jump" data-type="無料トライアル">無料トライアルを申し込む</button>
+            <button class="btn btn-secondary apply-jump" data-type="有料版">有料版を申し込む</button>
+            <a class="btn btn-dark" href="tel:0669976630">担当営業・電話で相談</a>
+          </div>
+          <div class="hero-linkline">ライフイズテック レッスンの詳細は <a href="https://lifeistech-lesson.jp/" target="_blank" rel="noopener">公式サイト</a> でもご覧いただけます。</div>
+          <div class="quick-facts">
+            <div class="fact"><i>◎</i><b>技術分野に対応</b><span>「D 情報の技術」D(1)〜D(4)</span></div>
+            <div class="fact"><i>▣</i><b>ブラウザで利用</b><span>学校のGIGA端末で始めやすい</span></div>
+            <div class="fact"><i>✓</i><b>先生用支援あり</b><span>指導案・スライド・進捗確認</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="教材イメージ">
+          <div class="hero-photo-card">
+            <img src="assets/hero-photo.png" alt="タブレットを使って学ぶ生徒と先生の写真">
+            <div class="caption-chip"><span>✓</span> 生徒が端末を使い、先生と一緒に学ぶ授業イメージ</div>
+          </div>
+          <div class="hero-side-card">
+            <h3>ライフイズテック レッスンを、学校でもっと身近に。</h3>
+            <p>教材の内容確認から無料トライアル、正式導入まで、株式会社タナカが学校の窓口としてご案内します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="intro">
+      <div class="wrap intro-grid">
+        <div class="intro-card">
+          <div class="kicker">WHAT IS LIFE IS TECH! LESSON</div>
+          <h3>ライフイズテック レッスンとは</h3>
+          <p>中学校の情報・技術教育に対応したデジタル学習教材です。生徒が画面上で学びを進めやすく、先生は授業準備や進捗確認を行いやすい構成になっています。</p>
+          <ul>
+            <li>ブラウザで利用でき、学校の端末で始めやすい</li>
+            <li>情報モラル、Web制作、計測・制御、AIなどを幅広く学べる</li>
+            <li>指導案・授業スライド・参考動画など先生向け支援も活用できる</li>
+            <li>詳しい教材内容は公式サイトで確認可能</li>
+          </ul>
+          <div class="link-box">
+            <a class="btn btn-primary" href="https://lifeistech-lesson.jp/" target="_blank" rel="noopener">ライフイズテック レッスン公式サイト</a>
+            <a class="btn btn-secondary" href="https://lifeistech-lesson.jp/middle-school/" target="_blank" rel="noopener">中学校向けページを見る</a>
+          </div>
+        </div>
+        <div class="visual-stack">
+          <div class="stack-card">
+            <img src="assets/lifeistech-photo.png" alt="ライフイズテックの学習風景">
+            <p>学びの雰囲気が伝わる写真イメージ</p>
+          </div>
+          <div class="stack-card">
+            <img src="assets/no1-badge.png" alt="中高累計導入数 No.1 のイメージ">
+            <p>実績訴求の画像もあわせて掲載できます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">ACHIEVEMENTS</div>
+          <h2 class="section-title">導入実績のイメージを、複数箇所で自然に見せる。</h2>
+          <p class="section-copy">実績画像はこのセクションに集約しすぎず、紹介セクションや信頼訴求セクションにも分散配置できる形へ調整しています。ここでは主要な実績画像を並べて見せます。</p>
+        </div>
+        <div class="achievement-grid">
+          <div class="achievement-card">
+            <img src="assets/no1-badge.png" alt="ライフイズテック レッスン 中高累計導入数 No.1 の画像">
+            <p>No.1訴求の文字画像は、信頼感を高めるアクセントとして活用できます。</p>
+          </div>
+          <div class="achievement-card">
+            <img src="assets/4400-schools.png" alt="ライフイズテック レッスン導入校数 4400校以上の画像">
+            <p>導入校数を大きく見せる画像は、LPの中でも目を引く要素として使えます。</p>
+          </div>
+          <div class="achievement-card">
+            <img src="assets/achievements.png" alt="600自治体、4000校、120万人の導入実績イメージ">
+            <p>自治体・学校・利用人数の実績画像も掲載し、信頼感を補強しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-image">
+          <img src="assets/no1-badge.png" alt="ライフイズテック レッスン 中高累計導入数 No.1 の画像">
+        </div>
+        <div class="trust-copy">
+          <div class="kicker">TRUST</div>
+          <h2>実績訴求の画像は、<br>信頼感を伝える場面で活用。</h2>
+          <p>ページ内の画像は、ヒーロー、紹介、信頼訴求、実績紹介など複数の場所に分けて配置することで、見た目に変化をつけながら内容とのつながりも持たせています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson" id="lesson">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">ABOUT THE LESSON</div>
+          <h2 class="section-title">情報モラルから、Web制作・計測制御・AIまで。</h2>
+          <p class="section-copy">「情報の技術」を知識として学ぶだけでなく、問題解決の流れに沿って、実際に手を動かしながら理解を深めやすい教材です。</p>
+        </div>
+        <div class="curriculum">
+          <article class="curr-card">
+            <div class="num">D(1) INFORMATION</div>
+            <h3>情報モラル・情報リテラシー</h3>
+            <p>情報の安全な活用や、生活・社会を支える情報技術について学び、考える力につなげます。</p>
+          </article>
+          <article class="curr-card">
+            <div class="num">D(2) WEB / PROGRAMMING</div>
+            <h3>Webコンテンツの制作</h3>
+            <p>HTML・CSS・JavaScriptなどを使い、ネットワークを利用した問題解決を体験します。</p>
+          </article>
+          <article class="curr-card">
+            <div class="num">D(3) MEASUREMENT / CONTROL</div>
+            <h3>計測・制御のプログラミング</h3>
+            <p>GIGA端末のカメラやスピーカーも活用し、計測・制御の仕組みとプログラミングを学びます。</p>
+          </article>
+          <article class="curr-card">
+            <div class="num">D(4) AI / SOCIETY</div>
+            <h3>AIのしくみと活用</h3>
+            <p>AIの基本的な仕組みや活用例を学び、情報技術と社会の関わりについて考えます。</p>
+          </article>
+        </div>
+        <p class="official-link">より詳しい教材内容・動作環境は <a href="https://lifeistech-lesson.jp/middle-school/" target="_blank" rel="noopener">ライフイズテック レッスン公式サイト ↗</a> をご覧ください。</p>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">FOR STUDENTS / TEACHERS</div>
+          <h2 class="section-title">生徒が進めやすい。先生も授業を組み立てやすい。</h2>
+          <p class="section-copy">生徒用教材だけでなく、先生の授業準備・授業進行・理解度確認を支えるツールが用意されています。</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit student">
+            <div class="benefit-label">生徒にとって</div>
+            <h3>自分のペースで、つくりながら学ぶ。</h3>
+            <ul class="checks">
+              <li><span class="tick">✓</span><span>教材内のナビゲーションに沿って、自分の進度で学習を進めやすい。</span></li>
+              <li><span class="tick">✓</span><span>入力したコードの結果をその場で確認しながら、理解を深めやすい。</span></li>
+              <li><span class="tick">✓</span><span>理解度チェックなどを使い、学んだ内容を振り返ることができる。</span></li>
+              <li><span class="tick">✓</span><span>授業だけでなく、学校の方針に応じて自学習にも活用しやすい。</span></li>
+            </ul>
+          </article>
+          <article class="benefit teacher">
+            <div class="benefit-label">先生にとって</div>
+            <h3>準備から進捗確認まで、授業を支える。</h3>
+            <ul class="checks">
+              <li><span class="tick">✓</span><span>指導案・授業投影用スライド・参考動画などを活用できる。</span></li>
+              <li><span class="tick">✓</span><span>生徒ごとの進捗や理解度を管理画面で確認できる。</span></li>
+              <li><span class="tick">✓</span><span>プログラミングに不安がある先生でも、授業を始めやすい。</span></li>
+              <li><span class="tick">✓</span><span>D(1)〜D(4)を学校の授業計画に合わせて組み合わせて使いやすい。</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans" id="plans">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">APPLICATION</div>
+          <h2 class="section-title">まず無料で試す。正式導入もタナカが窓口です。</h2>
+          <p class="section-copy">無料トライアル、有料版ともに、学校からのお申込み内容を株式会社タナカが受け付け、必要な手続きを進めます。</p>
+        </div>
+        <div class="plan-grid">
+          <article class="plan trial">
+            <div class="plan-tag">R8 FREE TRIAL</div>
+            <h3>無料トライアル</h3>
+            <p>有料契約と同じ状態の利用環境を用意し、先生・生徒が実際に教材を試すことができます。</p>
+            <div class="deadline">2026年10月31日（土）まで利用可能</div>
+            <ul>
+              <li>学校単位でお申込み</li>
+              <li>先生・生徒が実際に利用可能</li>
+              <li>先生用ツールも利用可能</li>
+              <li>お申込み後、タナカ担当営業が電話で内容を確認し、手続きを進めます</li>
+            </ul>
+            <button class="btn btn-primary apply-jump" data-type="無料トライアル">無料トライアルを申し込む</button>
+            <div class="plan-note">対象学年・アカウント数は、学校の利用方法に合わせて担当営業とご相談ください。</div>
+          </article>
+          <article class="plan">
+            <div class="plan-tag">PAID PLAN</div>
+            <h3>有料版のお申込み</h3>
+            <p>正式導入をご希望の学校は、利用学年・人数などを確認のうえ、担当営業から条件をご案内します。</p>
+            <ul>
+              <li>学校・学年ごとの導入相談</li>
+              <li>利用条件・開始時期を担当営業から案内</li>
+              <li>正式申込・請求・集金は株式会社タナカが対応</li>
+              <li>操作・設定など技術的な内容はライフイズテックと連携して対応</li>
+            </ul>
+            <button class="btn btn-primary apply-jump" data-type="有料版">有料版を申し込む</button>
+            <div class="plan-note">2026年度の中学3年生向け導入条件についても、担当営業へご相談ください。</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">TANAKA SUPPORT</div>
+          <h2 class="section-title">学校からのご相談窓口は、株式会社タナカです。</h2>
+          <p class="section-copy">ライフイズテックの教材力と、タナカの学校営業・導入窓口を組み合わせ、学校側が相談しやすい形でご案内します。</p>
+        </div>
+        <div class="window-grid">
+          <div class="window-message">
+            <div class="mini">FOR SCHOOLS</div>
+            <h3>質問や導入の相談は、まずタナカの担当営業へ。</h3>
+            <p>無料トライアル、正式導入、利用学年・人数、申込方法などは担当営業が承ります。担当営業が分からない場合は、下記電話番号へご連絡ください。</p>
+            <a class="phone-card" href="tel:0669976630">
+              <small>株式会社タナカ</small>
+              <strong>06-6997-6630</strong>
+            </a>
+          </div>
+          <div class="flow" aria-label="役割分担">
+            <div class="flow-row">
+              <div class="flow-role">学校</div>
+              <div class="arrow">→</div>
+              <div class="flow-text"><strong>無料トライアル・有料版の申込み、導入相談</strong><br>学校名、担当先生、利用学年・人数などをお知らせください。</div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-role">株式会社タナカ</div>
+              <div class="arrow">→</div>
+              <div class="flow-text"><strong>学校の販売・申込み窓口</strong><br>申込受付、学校との連絡、正式導入時の請求・集金まで対応します。</div>
+            </div>
+            <div class="flow-row">
+              <div class="flow-role lit">Life is Tech!</div>
+              <div class="arrow">→</div>
+              <div class="flow-text"><strong>教材・システムの専門サポート</strong><br>利用環境の準備、操作・設定・アカウントなど技術的な内容を支援します。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="apply" id="apply">
+      <div class="wrap apply-grid">
+        <div class="apply-info">
+          <div class="kicker">APPLICATION FORM</div>
+          <h3>ライフイズテック レッスン（中学）<br>お申込みフォーム</h3>
+          <p>無料トライアルまたは有料版をご希望の学校はこちらからお申込みください。</p>
+          <div class="callout">
+            <b>ご質問・導入相談はフォームではなく担当営業へ</b>
+            <span>担当営業または TEL 06-6997-6630 までご相談ください。</span>
+          </div>
+          <div class="callout">
+            <b>お申込み後は担当営業からお電話します</b>
+            <span>利用開始に必要な確認事項は、学校代表電話番号へ担当営業からご連絡して確認します。</span>
+          </div>
+          <button class="btn btn-secondary print-trigger" type="button">お申込み用紙を印刷する</button>
+        </div>
+
+        <form id="applyForm">
+          <div class="form-title">お申込み内容</div>
+          <div class="form-sub">※現在は内容確認用の添付画像反映版です。</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="applyType">お申込み区分<span class="req">必須</span></label>
+              <select id="applyType" required>
+                <option value="">選択してください</option>
+                <option value="無料トライアル">無料トライアル</option>
+                <option value="有料版">有料版</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="school">中学校名<span class="req">必須</span></label>
+              <input id="school" required autocomplete="organization" placeholder="例：〇〇市立〇〇中学校" />
+            </div>
+
+            <div class="field">
+              <label for="schoolTel">学校代表電話番号<span class="req">必須</span></label>
+              <input id="schoolTel" type="tel" required autocomplete="tel" placeholder="例：06-0000-0000" />
+            </div>
+            <div class="field">
+              <label for="teacher">先生の氏名<span class="req">必須</span></label>
+              <input id="teacher" required autocomplete="name" placeholder="例：田中 太郎" />
+            </div>
+
+            <div class="field full">
+              <label>担当教科<span class="req">必須</span></label>
+              <div class="subject-row">
+                <label><input type="radio" name="subject" value="技術" required /> 技術</label>
+                <label><input type="radio" name="subject" value="その他" required /> その他</label>
+                <input id="otherSubject" type="text" placeholder="その他の教科名（任意）" style="flex:1;min-width:190px" disabled />
+              </div>
+            </div>
+
+            <div class="grade-box">
+              <div class="grade-head">利用する学年・学年人数 <span class="req">必須</span></div>
+              <div class="grade-row">
+                <label class="grade-check"><input id="g1" type="checkbox" /> 中学1年</label>
+                <div class="grade-count"><input id="n1" type="number" min="1" inputmode="numeric" placeholder="学年人数" disabled /><span>名</span></div>
+              </div>
+              <div class="grade-row">
+                <label class="grade-check"><input id="g2" type="checkbox" /> 中学2年</label>
+                <div class="grade-count"><input id="n2" type="number" min="1" inputmode="numeric" placeholder="学年人数" disabled /><span>名</span></div>
+              </div>
+              <div class="grade-row">
+                <label class="grade-check"><input id="g3" type="checkbox" /> 中学3年</label>
+                <div class="grade-count"><input id="n3" type="number" min="1" inputmode="numeric" placeholder="学年人数" disabled /><span>名</span></div>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input id="consent" type="checkbox" required />
+              <span>入力した内容を、株式会社タナカへの「ライフイズテック レッスン（中学）」申込み情報として送信することに同意します。<span class="req">必須</span></span>
+            </label>
+            <div id="formError" class="form-error">入力内容をご確認ください。</div>
+            <div id="formSuccess" class="form-success">お申込み内容を送信しました。タナカ担当営業から学校代表電話番号へご連絡します。</div>
+            <div class="submit-row">
+              <button class="btn btn-primary" id="submitBtn" type="submit">申込み内容を送信する</button>
+              <button class="btn btn-secondary print-trigger" type="button">この内容を印刷する</button>
+              <span class="submit-note">送信内容は株式会社タナカで一括受付します。</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="company" id="company">
+      <div class="wrap company-box">
+        <div>
+          <div class="kicker">COMPANY</div>
+          <h3>株式会社タナカ</h3>
+          <p>学校教材の販売に加え、中学校の情報・技術教育で利用するデジタル教材の取り扱い・導入支援に対応します。ライフイズテック レッスンについても、学校の身近な販売・相談窓口としてご案内します。</p>
+        </div>
+        <dl>
+          <dt>会社名</dt><dd>株式会社タナカ</dd>
+          <dt>所在地</dt><dd>大阪府守口市南寺方東通3-8-6</dd>
+          <dt>電話番号</dt><dd><a href="tel:0669976630">06-6997-6630</a></dd>
+          <dt>学校向け対応</dt><dd>学校教材販売／デジタル教材の申込・導入支援</dd>
+          <dt>導入相談</dt><dd>タナカの担当営業、または上記電話番号へご相談ください。</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <section id="printSheet" class="paper-only" aria-hidden="true">
+    <div class="print-page">
+      <div class="print-topline"><span>株式会社タナカ</span><span>TEL 06-6997-6630</span></div>
+      <div class="print-title">ライフイズテック レッスン（中学）</div>
+      <div class="print-sub">お申込み用紙</div>
+      <p class="print-note">下記の項目をご記入ください。Webフォームに入力済みの場合は、その内容を反映して印刷できます。</p>
+
+      <div class="print-block">
+        <div class="print-label">お申込み区分</div>
+        <div class="print-choice" id="pApplyType">□ 無料トライアル　　□ 有料版</div>
+      </div>
+
+      <div class="print-block">
+        <div class="print-label">中学校名</div>
+        <div class="print-value" id="pSchool"></div>
+      </div>
+
+      <div class="print-row2">
+        <div class="print-block">
+          <div class="print-label">学校代表電話番号</div>
+          <div class="print-value" id="pSchoolTel"></div>
+        </div>
+        <div class="print-block">
+          <div class="print-label">先生の氏名</div>
+          <div class="print-value" id="pTeacher"></div>
+        </div>
+      </div>
+
+      <div class="print-block">
+        <div class="print-label">担当教科</div>
+        <div class="print-choice" id="pSubject">□ 技術　　□ その他（　　　　　　　　　　　　　　）</div>
+      </div>
+
+      <div class="print-block">
+        <div class="print-label">利用する学年における学年人数</div>
+        <table class="print-grade-table">
+          <tr><th style="width:32%">利用学年</th><th>学年人数</th></tr>
+          <tr><td id="pG1">□ 中学1年</td><td id="pN1">学年人数　　　　　　　　　名</td></tr>
+          <tr><td id="pG2">□ 中学2年</td><td id="pN2">学年人数　　　　　　　　　名</td></tr>
+          <tr><td id="pG3">□ 中学3年</td><td id="pN3">学年人数　　　　　　　　　名</td></tr>
+        </table>
+        <div class="print-helper">※ご利用予定の学年にチェックを入れ、それぞれの学年人数をご記入ください。</div>
+      </div>
+
+      <div class="print-footer">お申込み　株式会社タナカ　TEL 06-6997-6630</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="footer-brand"><strong>Life is Tech! Lesson</strong><span>×</span><strong>株式会社タナカ</strong><span>中学校向け導入・申込み窓口</span></div>
+      <div>© TANAKA. Pilot site.</div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('applyForm');
+    const typeSelect = document.getElementById('applyType');
+    const errorBox = document.getElementById('formError');
+    const successBox = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+    const otherSubject = document.getElementById('otherSubject');
+
+    document.querySelectorAll('.apply-jump').forEach((button) => {
+      button.addEventListener('click', () => {
+        typeSelect.value = button.dataset.type || '';
+        document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => typeSelect.focus(), 450);
+      });
+    });
+
+    [['g1','n1'],['g2','n2'],['g3','n3']].forEach(([checkId, inputId]) => {
+      const check = document.getElementById(checkId);
+      const input = document.getElementById(inputId);
+      check.addEventListener('change', () => {
+        input.disabled = !check.checked;
+        input.required = check.checked;
+        if (!check.checked) input.value = '';
+      });
+    });
+
+    document.querySelectorAll('input[name="subject"]').forEach((radio) => {
+      radio.addEventListener('change', () => {
+        const isOther = document.querySelector('input[name="subject"]:checked')?.value === 'その他';
+        otherSubject.disabled = !isOther;
+        if (!isOther) otherSubject.value = '';
+      });
+    });
+
+    const val = (id) => document.getElementById(id)?.value.trim() || '';
+    const selectedSubject = () => {
+      const base = document.querySelector('input[name="subject"]:checked')?.value || '';
+      if (base === 'その他' && val('otherSubject')) return `その他（${val('otherSubject')}）`;
+      return base;
+    };
+    const grades = () => {
+      const out = [];
+      [['g1','n1','中学1年'],['g2','n2','中学2年'],['g3','n3','中学3年']].forEach(([g,n,label]) => {
+        if (document.getElementById(g).checked) out.push(`${label}：${val(n)}名`);
+      });
+      return out;
+    };
+
+    function updatePrintSheet(){
+      const setText = (id, text) => document.getElementById(id).textContent = text || '';
+      const t = val('applyType');
+      setText('pApplyType', `${t === '無料トライアル' ? '☑' : '□'} 無料トライアル　　${t === '有料版' ? '☑' : '□'} 有料版`);
+      setText('pSchool', val('school'));
+      setText('pSchoolTel', val('schoolTel'));
+      setText('pTeacher', val('teacher'));
+      const sub = selectedSubject();
+      setText('pSubject', `${sub === '技術' ? '☑' : '□'} 技術　　${sub.startsWith('その他') ? '☑' : '□'} その他（${sub.startsWith('その他') ? val('otherSubject') : '　　　　　　　　　　　　　　'}）`);
+      [['g1','n1','pG1','pN1','中学1年'],['g2','n2','pG2','pN2','中学2年'],['g3','n3','pG3','pN3','中学3年']].forEach(([g,n,pg,pn,label]) => {
+        const checked = document.getElementById(g).checked;
+        setText(pg, `${checked ? '☑' : '□'} ${label}`);
+        setText(pn, checked && val(n) ? `学年人数　${val(n)} 名` : '学年人数　　　　　　　　　名');
+      });
+    }
+
+    document.querySelectorAll('.print-trigger').forEach((button) => {
+      button.addEventListener('click', () => {
+        updatePrintSheet();
+        window.print();
+      });
+    });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorBox.style.display = 'none';
+      successBox.style.display = 'none';
+      if (!form.reportValidity()) return;
+
+      const selectedGrades = grades();
+      if (!selectedGrades.length || selectedGrades.some(g => /：名$/.test(g))) {
+        errorBox.textContent = '利用する学年にチェックを入れ、その学年人数を入力してください。';
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中…';
+
+      const payload = {
+        _subject: `【ライフイズテック レッスン申込】${val('applyType')}｜${val('school')}`,
+        'お申込み区分': val('applyType'),
+        '中学校名': val('school'),
+        '学校代表電話番号': val('schoolTel'),
+        '先生の氏名': val('teacher'),
+        '担当教科': selectedSubject(),
+        '利用学年・学年人数': selectedGrades.join(' / '),
+        '受付元': '株式会社タナカ 学校向けパイロットサイト'
+      };
+
+      const endpoint = 'https://formsubmit.co/ajax/' + atob('aW5mb0BzYW5lc3UtYXJ0LmNvbQ==');
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error('send failed');
+        const result = await response.json().catch(() => ({}));
+        if (result.success === false) throw new Error('send failed');
+        successBox.style.display = 'block';
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        errorBox.textContent = '送信できませんでした。お手数ですが、株式会社タナカ TEL 06-6997-6630 までご連絡ください。';
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '申込み内容を送信する';
+      }
+    });
+  </script>
+</body>
+</html>
