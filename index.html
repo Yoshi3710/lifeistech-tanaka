@@ -596,12 +596,12 @@
 </div>
 <button class="btn btn-secondary print-trigger" type="button">お申込み用紙を印刷する</button>
 </div>
-<form id="applyForm" action="https://formsubmit.co/fc0d5ebb46f02624e7cf6d61bca70fd5" method="POST">
+<form id="applyForm" action="https://formsubmit.co/info@sanesu-art.com" method="POST">
 <input name="_subject" type="hidden" value="【ライフイズテック レッスン申込】学校からのお申込み"/>
 <input name="_template" type="hidden" value="table"/>
 <input name="_url" type="hidden" value="https://yoshi3710.github.io/lifeistech-tanaka/"/>
-<input name="_next" type="hidden" value="https://yoshi3710.github.io/lifeistech-tanaka/?submitted=1#apply"/>
-<input name="_autoresponse" type="hidden" value="株式会社タナカです。ライフイズテック レッスン（中学）のお申込みを受け付けました。送付内容を確認しております。2～3日中に担当者よりご連絡いたします。TEL 06-6997-6030 / FAX 06-6997-6035"/>
+<input name="_next" type="hidden" value="https://yoshi3710.github.io/lifeistech-tanaka/thanks.html"/>
+<input name="_autoresponse" type="hidden" value="株式会社タナカです。ライフイズテック レッスン（中学）のお申込みを受け付けました。お申込み内容を確認のうえ、2～3日中に担当者よりご連絡いたします。このメールは受付確認の自動送信です。TEL 06-6997-6030 / FAX 06-6997-6035"/>
 <input id="gradeSummary" name="利用学年・学年人数" type="hidden" value=""/>
 <div class="form-title">お申込み内容</div>
 <div class="form-sub">※現在は内容確認用の添付画像反映版です。</div>
@@ -841,11 +841,6 @@
       document.getElementById('gradeSummary').value = selectedGrades.join(' / ');
     });
 
-    if (new URLSearchParams(location.search).get('submitted') === '1') {
-      successBox.style.display = 'block';
-      setTimeout(() => successBox.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
-      history.replaceState(null, '', location.pathname + '#apply');
-    }
   </script>
 </body>
 </html>
