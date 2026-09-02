@@ -596,8 +596,8 @@
 </div>
 <button class="btn btn-secondary print-trigger" type="button">お申込み用紙を印刷する</button>
 </div>
-<form id="applyForm" action="https://formsubmit.co/info@sanesu-art.com" method="POST">
-<input name="_subject" type="hidden" value="【ライフイズテック レッスン申込】学校からのお申込み"/>
+<form id="applyForm" action="https://formsubmit.co/fc0d5ebb46f02624e7cf6d61bca70fd5" method="POST">
+<input id="mailSubject" name="_subject" type="hidden" value="【ライフイズテック レッスン申込】学校からのお申込み"/>
 <input name="_template" type="hidden" value="table"/>
 <input name="_url" type="hidden" value="https://yoshi3710.github.io/lifeistech-tanaka/"/>
 <input name="_next" type="hidden" value="https://yoshi3710.github.io/lifeistech-tanaka/?submitted=1#apply"/>
@@ -629,6 +629,7 @@
 <div class="field full">
 <label for="replyEmail">返信用メールアドレス<span class="req">必須</span></label>
 <input autocomplete="email" id="replyEmail" name="email" placeholder="例：teacher@example.ed.jp" required="" type="email"/>
+<input id="replyEmailCopy" name="返信用メールアドレス" type="hidden" value=""/>
 <div class="form-sub" style="margin:0">受付確認の自動メールをこのアドレスへ送信します。</div>
 </div>
 <div class="field full">
@@ -839,6 +840,8 @@
       }
 
       document.getElementById('gradeSummary').value = selectedGrades.join(' / ');
+      document.getElementById('replyEmailCopy').value = val('replyEmail');
+      document.getElementById('mailSubject').value = `【ライフイズテック レッスン申込】${val('applyType')}｜${val('school')}`;
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中…';
     });
